@@ -197,6 +197,92 @@ button:hover {
   color: #fecaca;
 }
 
+.analytics-panel {
+  margin-top: 24px;
+}
+
+.analytics-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.analytics-heading h2 {
+  margin: 6px 0;
+}
+
+.section-intro {
+  max-width: 650px;
+  color: #9db3c9;
+  margin: 8px 0 0;
+}
+
+.dataset-notice {
+  color: #77d9ff;
+  font-size: 0.8rem;
+  margin: 8px 0 0;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(130px, 1fr));
+  gap: 12px;
+  min-width: min(540px, 100%);
+}
+
+.filter-grid label {
+  font-size: 0.82rem;
+}
+
+.filter-grid select {
+  min-height: 42px;
+  font-size: 0.86rem;
+  text-transform: capitalize;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.chart-card {
+  min-width: 0;
+  background: rgba(8, 15, 25, 0.62);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 16px;
+  padding: 18px 14px 14px;
+}
+
+.chart-title {
+  min-height: 48px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 8px;
+}
+
+.chart-title h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.chart-title span {
+  color: #8ca5bd;
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+.chart-note {
+  min-height: 38px;
+  margin: 8px 8px 0;
+  color: #8fa5bb;
+  font-size: 0.78rem;
+}
+
 @media (max-width: 860px) {
   .grid {
     grid-template-columns: 1fr;
@@ -209,5 +295,31 @@ button:hover {
   .topbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .analytics-heading {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-grid {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+    min-height: 56px;
   }
 }

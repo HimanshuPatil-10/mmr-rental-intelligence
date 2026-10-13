@@ -53,7 +53,7 @@ help:
 	@echo "  make train  - Train the prediction model"
 	@echo "  make app    - Run Streamlit dashboard"
 	@echo "  make api    - Run FastAPI server"
-	@echo "  make api-assets - Build locality data bundled with the API"
+	@echo "  make api-assets - Build locality and chart data bundled with the API"
 	@echo "  make test   - Run tests with coverage"
 	@echo "  make clean  - Remove cache files"
 	@echo "  make help   - Show this help message"

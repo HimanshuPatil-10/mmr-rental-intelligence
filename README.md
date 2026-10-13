@@ -118,13 +118,17 @@ make test
 ## Endpoints and Outputs
 - FastAPI health check: `/health`
 - FastAPI locality list: `/localities`
+- FastAPI analytics data for dashboard charts: `/analytics`
 - FastAPI prediction endpoint: `/predict`
 - Streamlit dashboard: `app/streamlit_app.py`
 - React frontend: `frontend/`
 - Compact API model artifact: `data/processed/mmr_rent_model.joblib`
 - API locality and benchmark data: `api/locality_stats.json`
+- API chart observations (rent, area, filters): `api/chart_data.json`
 - Model metrics: `data/processed/model_metadata.json`
 - SQL outputs: `data/processed/sql_outputs/*.csv`
+
+The React dashboard provides filterable charts for median rent per sqft by locality, rent/sqft quartiles by region, carpet area versus monthly rent, and station proximity comparisons. Region, BHK, and furnishing filters apply across the charts. The station chart describes association, not causation; plotted rent/area points omit listing IDs and coordinates.
 
 ## FastAPI + React Deployment
 This project is now structured for a more professional portfolio deployment than a Streamlit-only demo.

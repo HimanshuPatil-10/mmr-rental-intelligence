@@ -7,12 +7,14 @@ from pathlib import Path
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 
 from api.schemas import RentPredictionRequest, RentPredictionResponse
 from src.models.train_model import FEATURE_COLUMNS, load_model
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 LOCALITY_STATS_PATH = PROJECT_ROOT / "api" / "locality_stats.json"
+CHART_DATA_PATH = PROJECT_ROOT / "api" / "chart_data.json"
 
 app = FastAPI(
     title="MMR Rental Market Intelligence API",
@@ -27,6 +29,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 
 @lru_cache(maxsize=1)
@@ -90,6 +93,17 @@ def health() -> dict[str, str]:
 @app.get("/localities")
 def list_localities() -> dict[str, list[str]]:
     return {"localities": get_localities()}
+
+
+@lru_cache(maxsize=1)
+def get_chart_data() -> dict:
+    with CHART_DATA_PATH.open(encoding="utf-8") as file:
+        return json.load(file)
+
+
+@app.get("/analytics")
+def analytics() -> dict:
+    return get_chart_data()
 
 
 @lru_cache(maxsize=1)

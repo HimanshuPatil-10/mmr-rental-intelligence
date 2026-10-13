@@ -89,3 +89,18 @@ def test_api_health_and_prediction_work():
     assert payload["area_sqft"] == 850.0
     assert payload["predicted_rent_inr"] > 0
     assert payload["fairness_label"] in {"fair", "overpriced", "undervalued"}
+
+
+def test_analytics_endpoint_serves_gzipped_chart_data():
+    client = TestClient(app)
+    response = client.get("/analytics", headers={"Accept-Encoding": "gzip"})
+
+    assert response.status_code == 200
+    assert response.headers["content-encoding"] == "gzip"
+    payload = response.json()
+    assert payload["record_count"] == len(payload["records"])
+    assert payload["record_count"] > 20_000
+    assert len(payload["regions"]) == 6
+    assert {record["bhk"] for record in payload["records"]} == {1, 2, 3, 4, 5}
+    assert {"area_sqft", "rent_inr", "rent_per_sqft_inr"}.issubset(payload["records"][0])
+    assert "id" not in payload["records"][0]
