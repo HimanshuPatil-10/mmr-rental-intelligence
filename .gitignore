@@ -40,7 +40,7 @@ data/processed/*.csv
 *.pkl
 *.joblib
 *.h5
-models/
+/models/
 !data/processed/mmr_rent_model.joblib
 
 # Node.js
