@@ -1,0 +1,7 @@
+region,total_listings,unique_localities,avg_monthly_rent_inr,avg_rent_per_sqft_inr,avg_station_distance_km,avg_business_hub_distance_km,percent_within_1km_station,avg_area_sqft
+South Mumbai,5214,18,158376.87,153.32,1.49,4.84,36.04,998.78
+Western,6656,24,68035.71,73.46,1.48,7.87,44.77,898.76
+Central,4574,16,61073.39,66.73,2.34,3.65,30.15,887.42
+Navi Mumbai,3191,12,27332.28,31.6,2.67,3.86,18.46,868.02
+Thane,2207,9,20558.99,22.98,4.07,6.98,10.38,890.88
+Far Western,1010,4,13578.81,14.75,5.59,28.31,8.71,920.84

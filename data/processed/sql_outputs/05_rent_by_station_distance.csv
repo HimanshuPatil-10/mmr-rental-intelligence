@@ -1,0 +1,6 @@
+station_distance_bucket,listing_count,avg_rent_per_sqft_inr,avg_monthly_rent_inr,avg_actual_distance_km,avg_area_sqft
+0-0.5km,2526,93.1,89534.88,0.33,913.72
+0.5-1km,4618,92.1,89651.19,0.75,924.09
+1-2km,6923,88.76,86690.84,1.44,925.97
+2-5km,6088,67.95,65887.27,3.21,911.1
+5km+,2697,26.47,23293.03,6.55,883.25

@@ -1,0 +1,32 @@
+{
+  "model_name": "HistGradientBoostingRegressor",
+  "version": "1.0.0",
+  "trained_at": "2026-10-13T09:01:13.390722+00:00",
+  "target": "monthly_rent_inr",
+  "feature_columns": [
+    "locality",
+    "region",
+    "bhk",
+    "carpet_area_sqft",
+    "furnishing",
+    "bedrooms",
+    "floor",
+    "total_floors",
+    "parking",
+    "property_type",
+    "tier",
+    "near_station_1km",
+    "min_dist_to_business_hub_km",
+    "metro_distance_min",
+    "dist_to_airport_km",
+    "dist_to_bkc_km"
+  ],
+  "test_metrics": {
+    "mae_inr": 10973.862920227031,
+    "rmse_inr": 20070.91080867083,
+    "r2": 0.9428124291866157,
+    "mape": 0.15385523133991902
+  },
+  "cv_mae_inr": 10869.090554521224,
+  "cv_rmse_inr": 20024.415997566754
+}
